@@ -15,7 +15,7 @@ jobs:
         steps:
             - name: Adicionando Comentário
               id: comment_step
-              uses: leosimao88/action-docker@main
+              uses: leosimao88/action-docker@v1.0.0
               with:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 issue-id: ${{ github.event.issue.number }}
