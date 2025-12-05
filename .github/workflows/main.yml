@@ -21,5 +21,5 @@ jobs:
                 issue-id: ${{ github.event.issue.number }}
                 comment: "Teste de comentário"
             - name: "Mostrar o ID do comentário"
-              run: |
-                echo: 'ID do comentário é: ${{ steps.comment_step.outputs.comment-id }}'
+              run: |
+                echo 'ID do comentário é: ${{ steps.comment_step.outputs.comment-id }}' 
