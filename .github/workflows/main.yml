@@ -11,15 +11,16 @@ jobs:
             issues: write
             pull-requests: write 
         runs-on: ubuntu-latest
-        name: Execução de Custom Action
+        name: Execução de Custom Action (Docker)
         steps:
             - name: Adicionando Comentário
               id: comment_step
-              uses: leosimao88/action-js@main
+              uses: leosimao88/action-docker@main
               with:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 issue-id: ${{ github.event.issue.number }}
-                comment: "Teste de comentário"
+                comment: "Teste de comentário docker"
+                GITHUB_REPOSITORY: ${{ github.repository }}
             - name: "Mostrar o ID do comentário"
               run: |
                 echo 'ID do comentário é: ${{ steps.comment_step.outputs.comment-id }}'
