@@ -14,8 +14,12 @@ jobs:
         name: Execução de Custom Action
         steps:
             - name: Adicionando Comentário
+              id: comment_step
               uses: leosimao88/action-js@main
               with:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 issue-id: ${{ github.event.issue.number }}
                 comment: "Teste de comentário"
+            - name: "Mostrar o ID do comentário"
+              run: |
+                echo: 'ID do comentário é: ${{ steps.comment_step.outputs.comment-id }}'
